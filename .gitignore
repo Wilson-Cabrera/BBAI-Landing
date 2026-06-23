@@ -1,0 +1,5 @@
+.agents/
+skills-lock.json
+# Opcional: imágenes temporales de mockups que generamos si no se usan
+prompt_key.png
+prompt_cabin.png
