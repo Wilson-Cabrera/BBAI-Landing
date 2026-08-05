@@ -114,9 +114,9 @@ Para adaptarse a tu entorno y brindarte la experiencia de lectura más cómoda p
 **¿Cómo alternar entre los modos?**
 Cambiar la apariencia de la app es rápido e intuitivo. Simplemente debes presionar el **ícono de tu perfil** ubicado en la interfaz principal. Al tocarlo, el sistema alternará instantáneamente entre el modo claro y el oscuro, permitiéndote ajustar la aplicación a la iluminación de tu entorno en un solo paso.
 
-| Modo Claro | Modo Oscuro |
+| Modo Oscuro | Modo Claro |
 |:---:|:---:|
-| ![Modo Claro](https://i.postimg.cc/SR86GhTW/imagen-2026-08-05-134421575.png) | ![Modo Oscuro](https://i.postimg.cc/pL1mySCS/imagen-2026-08-05-134708304.png) |
+| ![Modo Oscuro](https://i.postimg.cc/SR86GhTW/imagen-2026-08-05-134421575.png) | ![Modo Claro](https://i.postimg.cc/pL1mySCS/imagen-2026-08-05-134708304.png) |
 
 ---
 
