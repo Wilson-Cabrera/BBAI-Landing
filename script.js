@@ -178,6 +178,47 @@ Para más información, descarga de nuevas versiones o contacto con el equipo de
             gfm: true,
         });
         markdownOutput.innerHTML = marked.parse(MANUAL_MARKDOWN.trim());
+
+        // Assign IDs to headings so anchor links (TOC) can target them
+        const headings = markdownOutput.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(heading => {
+            const slug = heading.textContent
+                .toLowerCase()
+                .trim()
+                .replace(/[^\w\u00C0-\u024F\s-]/g, '')
+                .replace(/[\s.]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+            if (slug) {
+                heading.id = slug;
+            }
+        });
+    }
+
+    // Enable smooth scroll for internal anchor links inside the manual panel
+    const manualContent = document.getElementById('manual-content');
+    if (manualContent) {
+        manualContent.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a[href^="#"]');
+            if (!anchor) return;
+
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') return;
+
+            const targetId = decodeURIComponent(href.substring(1));
+            const targetEl = document.getElementById(targetId);
+
+            if (targetEl) {
+                e.preventDefault();
+                const containerRect = manualContent.getBoundingClientRect();
+                const targetRect = targetEl.getBoundingClientRect();
+                const relativeTop = targetRect.top - containerRect.top + manualContent.scrollTop;
+
+                manualContent.scrollTo({
+                    top: Math.max(0, relativeTop - 16),
+                    behavior: 'smooth'
+                });
+            }
+        });
     }
 });
 
